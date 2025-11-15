@@ -24,7 +24,7 @@ $userID = intval($_GET["userID"]);
 $sql = "SELECT role FROM users WHERE userID = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $userID);
-$stmt->execute();
+$stmt->execute(); 
 
 // Required so fetch() works properly
 $stmt->store_result();

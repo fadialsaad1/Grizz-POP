@@ -13,23 +13,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-// ---------------------------
-// FETCH EVENTS (no userID column)
-// ---------------------------
-$createdEvents = [];
-$sqlCreated = "
-  SELECT eventID, title, date, status
-  FROM events
-  ORDER BY date DESC
-";
 
-$resultCreated = $conn->query($sqlCreated);
-
-if ($resultCreated && $resultCreated->num_rows > 0) {
-  while ($row = $resultCreated->fetch_assoc()) {
-    $createdEvents[] = $row;
-  }
-}
 
 // ---------------------------
 // HANDLE NEW EVENT CREATION
@@ -55,6 +39,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["title"])) {
         echo "<script>alert('Error creating event: " . $conn->error . "');</script>";
     }
 }
+
+// ---------------------------
+// FETCH EVENTS (no userID column)
+// ---------------------------
+$createdEvents = [];
+$sqlCreated = "
+  SELECT eventID, title, date, status
+  FROM events
+  ORDER BY date DESC
+";
+
+$resultCreated = $conn->query($sqlCreated);
+
+if ($resultCreated && $resultCreated->num_rows > 0) {
+  while ($row = $resultCreated->fetch_assoc()) {
+    $createdEvents[] = $row;
+  }
+}
+
 ?>
 
 
@@ -80,8 +83,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["title"])) {
           <?php if (count($createdEvents) > 0): ?>
             <?php foreach ($createdEvents as $ev): ?>
               <li>
-                <?= htmlspecialchars($ev["title"]) ?>  
+                <?= htmlspecialchars($ev["title"]) ?>
                 (<?= date("m-d-Y", strtotime($ev["date"])) ?>)
+
+                <a class="edit-btn" href="edit_event.php?id=<?= $ev['eventID'] ?>">Edit</a>
+
+                <a class="cancel-btn" 
+                   href="cancel_event.php?id=<?= $ev['eventID'] ?>"
+                   onclick="return confirm('Are you sure you want to cancel this event?');">
+                   Cancel
+                </a>
               </li>
             <?php endforeach; ?>
           <?php else: ?>

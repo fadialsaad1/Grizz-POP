@@ -69,23 +69,63 @@ section {
     height: calc(100vh - 70px);
 }
 
-.createdEvents {
-    width: 22%;
-    border-right: 2px solid black;
-    padding: 20px;
-    background: white;
+.createdEvents ul li {
+    width: 450px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f7f7f7;
 }
 
-.createdEvents ul {
-    list-style: none;
-    padding: 0;
+
+.createdEvents ul li > span,
+.createdEvents ul li > .event-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 72%;       
 }
 
-.createEvent {
-    width: 56%;
-    padding: 20px;
-    border-right: 2px solid black;
+
+.edit-btn, .cancel-btn {
+    display: inline-block;
+    float: none !important;   
+    vertical-align: middle;
+    margin: 0;                  
 }
+
+
+.edit-btn {
+    background-color: #333;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.2s;
+    margin-left: auto;         
+}
+
+.edit-btn:hover { background-color: #0056b3; }
+
+
+.cancel-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.2s;
+    margin-left: 8px;
+}
+
+.cancel-btn:hover { background-color: #b02a37; }
+
 
 .eventDetailsBox {
     border: 2px solid black;
