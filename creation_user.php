@@ -70,10 +70,15 @@ if ($resultCreated && $resultCreated->num_rows > 0) {
 
   <body>
     <header>
-      <div>Grizz POP!</div>
-      <div class="user-menu">
+  <div class="logo-container">
+      <img src="images/Grizz POP.png" alt="Grizz POP Logo" class="logo">
+      <span class="logo-text">Grizz POP!</span>
+  </div>
+
+  <div class="user-menu">
       <button onclick="changeUser()">Change User</button>
-    </header>
+  </div>
+</header>
 
     <main>
       <!-- LEFT COLUMN: CREATED EVENTS -->
