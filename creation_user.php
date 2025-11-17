@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["title"])) {
     $location = $conn->real_escape_string($_POST["location"]);
     $date = $_POST["date"];
     $time = $_POST["time"];
-    $status = $conn->real_escape_string($_POST["status"]);
+    $status = "Waiting for setup crew";
     $comments = $conn->real_escape_string($_POST["comments"]);
 
     // INSERT without userID column
@@ -129,10 +129,8 @@ if ($resultCreated && $resultCreated->num_rows > 0) {
                   <input type="text" name="location" required>
 
                   <label>Status:</label>
-                  <select name="status">
-                      <option value="Planned">Planned</option>
-                      <option value="Scheduled">Scheduled</option>
-                      <option value="Completed">Completed</option>
+                  <select name="status" disabled>
+                      <option value="Waiting For Setup Crew">Waiting For Setup Crew</option>
                   </select>
 
                   <!-- Custom Comments -->

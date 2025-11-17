@@ -81,12 +81,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <label>Location:</label>
     <input type="text" name="location" value="<?= htmlspecialchars($event['location']) ?>" required>
 
-    <label>Status:</label>
-    <select name="status">
-        <option <?= $event['status']=='Planned'?'selected':'' ?>>Planned</option>
-        <option <?= $event['status']=='Scheduled'?'selected':'' ?>>Scheduled</option>
-        <option <?= $event['status']=='Completed'?'selected':'' ?>>Completed</option>
-    </select>
 
     <label>Comments:</label>
     <textarea name="comments"><?= htmlspecialchars($event['customComments'] ?? "") ?></textarea>
