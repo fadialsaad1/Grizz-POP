@@ -1,151 +1,208 @@
 /* =============================================
-   GRIZZ POP! MODERN GLASSMORPHISM DASHBOARD
+   GRIZZ POP!  — MODERN GLASSMORPHIC DASHBOARD
    ============================================= */
 
 /* ---------- Global ---------- */
 body {
-	margin: 0;
-	padding: 0;
-	font-family: "Segoe UI", Arial, sans-serif;
-	background: linear-gradient(135deg, #dfe9f3, #ffffff);
-	backdrop-filter: blur(5px);
-	-webkit-font-smoothing: antialiased;
-	color: #222;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #dfe9f3, #ffffff);
+    color: #222;
+}
+
+body, section {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ---------- Header ---------- */
 header {
-	background: rgba(20, 20, 20, 0.85);
-	backdrop-filter: blur(12px);
-	padding: 20px 35px;
-	color: white;
-	font-size: 26px;
-	font-weight: 600;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: rgba(34, 40, 49, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 5px 18px rgba(0,0,0,0.35);
+    color: white;
 }
 
-	header button {
-		background: rgba(0, 190, 190, 0.85);
-		color: #fff;
-		border: none;
-		padding: 12px 20px;
-		border-radius: 10px;
-		cursor: pointer;
-		font-size: 15px;
-		font-weight: 600;
-		transition: 0.2s;
-		box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-	}
+header button {
+        background: linear-gradient(135deg, #00c9d2, #009198);
+        border: none;
+        padding: 12px 20px;
+        border-radius: 12px;
+        color: white;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: 0.25s ease-in-out;
+        font-weight: 600;
+        box-shadow: 0 3px 10px rgba(0, 173, 181, 0.3);
+ }
 
-		header button:hover {
-			background: rgba(0, 160, 160, 0.95);
-			transform: translateY(-2px);
-		}
+        header button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(0, 173, 181, 0.35);
+        }
 
 /* ---------- Main Layout ---------- */
 main {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	gap: 35px;
-	padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 35px;
+    padding: 40px;
 }
 
-/* ---------- Glass Cards ---------- */
+/* ---------- Section Containers ---------- */
 section {
-	background: rgba(255, 255, 255, 0.55);
-	backdrop-filter: blur(18px);
-	border-radius: 22px;
-	padding: 25px;
-	box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-	border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(14px);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    border: 1px solid rgba(255,255,255,0.35);
+    height: fit-content;
 }
 
-	section h2 {
-		margin-top: 0;
-		font-size: 22px;
-		text-align: center;
-		color: #222;
-		padding-bottom: 10px;
-		border-bottom: 1px solid rgba(0,0,0,0.1);
-		backdrop-filter: blur(10px);
-	}
+    section h2 {
+        margin-top: 0;
+        font-size: 22px;
+        text-align: center;
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
 
-/* ---------- List Styling ---------- */
-ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+/* ---------- CARD LISTS ---------- */
+.event-card {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    border: 1px solid rgba(255,255,255,0.5);
+    transition: 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-li {
-	padding: 12px 0;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	border-bottom: 1px solid rgba(255,255,255,0.25);
-	font-size: 15px;
-	color: #222;
-}
-
-	li:last-child {
-		border-bottom: none;
-	}
+    .event-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
 
 /* ---------- Pin Button ---------- */
 .pinButton {
-	background: rgba(255, 255, 255, 0.6);
-	border: 1px solid rgba(255,255,255,0.8);
-	padding: 6px 12px;
-	border-radius: 10px;
-	cursor: pointer;
-	font-size: 16px;
-	transition: 0.2s;
-	box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    background: rgba(255, 240, 140, 0.7);
+    border: 1px solid rgba(255,255,255,0.8);
+    padding: 7px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.2s;
 }
 
-	.pinButton:hover {
-		background: rgba(255, 230, 80, 0.85);
-		transform: translateY(-2px);
-	}
+    .pinButton:hover {
+        background: rgba(255, 220, 60, 0.9);
+        transform: scale(1.1);
+    }
 
-/* ---------- Form Inputs ---------- */
-textarea, select, input[type="number"] {
-	width: 100%;
-	padding: 14px;
-	border-radius: 14px;
-	border: 1px solid rgba(0,0,0,0.15);
-	font-size: 15px;
-	margin-top: 10px;
-	background: rgba(255,255,255,0.7);
-	backdrop-filter: blur(10px);
-	box-shadow: inset 0 2px 8px rgba(0,0,0,0.05);
+/* ---------- Feedback Form ---------- */
+input, select, textarea {
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(0,0,0,0.15);
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(10px);
+    font-size: 15px;
+    margin-top: 12px;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.05);
 }
 
 textarea {
-	height: 130px;
-	resize: none;
+    height: 130px;
+    resize: none;
 }
 
-/* ---------- Submit Button ---------- */
 button[type="submit"] {
-	width: 100%;
-	background: rgba(30, 30, 30, 0.85);
-	color: white;
-	border: none;
-	padding: 15px;
-	border-radius: 14px;
-	cursor: pointer;
-	font-size: 17px;
-	margin-top: 15px;
-	font-weight: 600;
-	transition: 0.2s;
-	box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    margin-top: 15px;
+    width: 100%;
+    background: rgba(30, 30, 30, 0.9);
+    color: white;
+    padding: 16px;
+    border-radius: 14px;
+    border: none;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
-	button[type="submit"]:hover {
-		background: rgba(0,0,0,1);
-		transform: translateY(-2px);
-	}
+    button[type="submit"]:hover {
+        background: black;
+        transform: translateY(-2px);
+    }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1000px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    height: 60px;
+}
+
+.logo-text {
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+/* ---------- Star Rating ---------- */
+.star-rating {
+    display: inline-flex;
+    font-size: 32px; 
+    cursor: pointer;
+    gap: 6px; 
+}
+
+.star-rating span {
+     color: #bbbbbb;
+     padding: 5px;
+     transition: color 0.25s ease, transform 0.25s ease, text-shadow 0.25s ease;
+}
+
+.star-rating span:hover {
+      color: gold;
+      transform: scale(1.25);
+      text-shadow: 0 0 12px gold;
+ }
+
+.star-rating span.selected {
+       color: gold;
+       text-shadow: 0 0 10px gold;
+ }

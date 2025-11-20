@@ -61,23 +61,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Edit Event - Grizz POP!</title>
 
     <style>
-        /* GLOBAL */
+        /* ======================================================================
+   GLOBAL — Premium Modern UI
+====================================================================== */
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f1f1f1;
+            font-family: "Inter", sans-serif;
+            background: linear-gradient(135deg, #dfe9f3, #ffffff);
             color: #222;
+            animation: fadeIn 0.6s ease-in-out;
         }
 
-        /* HEADER */
+        /* Fade In Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ======================================================================
+   HEADER — Glass + Glow
+====================================================================== */
         header {
-            background: #111;
-            padding: 15px 25px;
+            background: rgba(34, 40, 49, 0.85);
+            backdrop-filter: blur(14px);
+            padding: 18px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.35);
         }
 
         .logo-container {
@@ -87,103 +107,134 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .logo {
-            width: 45px;
+            width: 55px;
+            filter: drop-shadow(0 3px 5px rgba(0,0,0,0.3));
         }
 
         .logo-text {
-            font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 1px;
+            font-size: 1.9rem;
+            font-weight: 800;
+            letter-spacing: 1.3px;
         }
 
-        /* MAIN WRAPPER */
+        /* ======================================================================
+   EDIT CARD — Glassmorphism Panel
+====================================================================== */
         .edit-card {
             max-width: 900px;
-            margin: 45px auto;
-            background: white;
-            border-radius: 14px;
-            padding: 40px;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.18);
+            margin: 55px auto;
+            padding: 45px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.75);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255,255,255,0.4);
+            box-shadow: 0 14px 32px rgba(0,0,0,0.18);
+            animation: fadeIn 0.6s ease-in-out;
+            transition: 0.3s ease;
         }
 
+            .edit-card:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 18px 40px rgba(0,0,0,0.22);
+            }
+
+        /* Title */
         .edit-title {
-            font-size: 32px;
-            font-weight: bold;
+            font-size: 2.2rem;
+            font-weight: 800;
             text-align: center;
-            color: #111;
-            margin-bottom: 25px;
+            letter-spacing: 1px;
+            color: #222;
+            margin-bottom: 30px;
         }
 
-        /* FORM */
+        /* ======================================================================
+   FORM INPUTS
+====================================================================== */
         label {
             display: block;
-            margin-top: 22px;
-            font-size: 16px;
-            font-weight: bold;
+            margin-top: 20px;
+            font-size: 15px;
+            font-weight: 700;
+            color: #222;
+            letter-spacing: 0.5px;
         }
 
         input, textarea, select {
             width: 100%;
-            margin-top: 6px;
+            margin-top: 8px;
             padding: 14px;
-            font-size: 16px;
-            background: #fafafa;
-            border: 2px solid #ccc;
-            border-radius: 10px;
-            transition: 0.25s;
+            font-size: 15px;
+            background: rgba(255,255,255,0.85);
+            border: 2px solid #d7dce5;
+            border-radius: 12px;
+            transition: 0.25s ease;
         }
 
-        input:focus, textarea:focus, select:focus {
-            border-color: #111;
-            outline: none;
-            background: #fff;
-        }
+            input:focus,
+            textarea:focus,
+            select:focus {
+                border-color: #00adb5;
+                box-shadow: 0 0 8px rgba(0,173,181,0.35);
+                background: #fff;
+                outline: none;
+            }
 
         textarea {
-            min-height: 140px;
+            min-height: 150px;
             resize: vertical;
         }
 
-        /* BUTTONS */
+        /* ======================================================================
+   BUTTONS — Gradient + Glow
+====================================================================== */
         .button-row {
-            margin-top: 35px;
+            margin-top: 40px;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 22px;
         }
 
+        /* Save Button */
         .saveBtn {
-            background: #111;
+            background: linear-gradient(135deg, #00c9d2, #009198);
             color: white;
-            padding: 14px 32px;
+            padding: 14px 34px;
             font-size: 17px;
-            border-radius: 10px;
+            border-radius: 12px;
             border: none;
             cursor: pointer;
-            font-weight: bold;
+            font-weight: 700;
             letter-spacing: 0.5px;
-            transition: 0.25s;
+            transition: 0.3s ease;
+            box-shadow: 0 4px 14px rgba(0,173,181,0.35);
         }
 
-        .saveBtn:hover {
-            background: #333;
-        }
+            .saveBtn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 10px 26px rgba(0,173,181,0.45);
+            }
 
+        /* Cancel Button */
         .cancelBtn {
-            background: #777;
+            background: linear-gradient(135deg, #393e46, #2e3238);
             color: white;
-            padding: 14px 32px;
+            padding: 14px 34px;
             font-size: 17px;
-            border-radius: 10px;
+            border-radius: 12px;
             border: none;
             cursor: pointer;
+            font-weight: 700;
             letter-spacing: 0.5px;
-            transition: 0.25s;
+            transition: 0.3s ease;
+            box-shadow: 0 4px 12px rgba(57,62,70,0.25);
         }
 
-        .cancelBtn:hover {
-            background: #555;
-        }
+            .cancelBtn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 10px 24px rgba(57,62,70,0.35);
+            }
+
 
     </style>
 </head>

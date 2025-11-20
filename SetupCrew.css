@@ -1,3 +1,6 @@
+/* ======================================================================
+   GLOBAL — Modern Premium Style
+====================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -6,24 +9,45 @@
 }
 
 body {
-    background: #eef1f6;
+    background: linear-gradient(135deg, #dfe9f3, #ffffff);
     padding: 0;
     margin: 0;
+    color: #333;
 }
 
-/* -------------------------
-   Header
--------------------------- */
+/* Smooth fade-in animation */
+body, section {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ======================================================================
+   HEADER — Glass + Glow
+====================================================================== */
 header {
-    width: 100%;
-    background: #1a1f36;
-    padding: 16px 40px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: rgba(34, 40, 49, 0.85);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.35);
     color: white;
 }
 
+/* Logo container */
 .logo-container {
     display: flex;
     align-items: center;
@@ -31,126 +55,185 @@ header {
 }
 
 .logo {
-    height: 45px;
+    height: 60px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
 }
 
 .logo-text {
-    font-size: 26px;
-    font-weight: 700;
+    font-size: 1.9rem;
+    font-weight: 800;
+    letter-spacing: 1.4px;
 }
 
-/* Change User Button */
+/* Main header button */
+header button {
+    background: linear-gradient(135deg, #00c9d2, #009198);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: 0.25s ease-in-out;
+    box-shadow: 0 3px 10px rgba(0, 173, 181, 0.35);
+}
+
+    header button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 22px rgba(0, 173, 181, 0.4);
+    }
+
+/* User menu button */
 .user-menu button {
     padding: 10px 18px;
-    background: #00b8b8;
+    background: linear-gradient(135deg, #00b8b8, #008a8a);
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 14px;
-    transition: 0.2s;
+    font-weight: 600;
+    transition: 0.25s;
+    box-shadow: 0 3px 10px rgba(0, 173, 181, 0.25);
 }
 
     .user-menu button:hover {
-        background: #009999;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(0, 153, 153, 0.4);
     }
 
-/* -------------------------
-   Main Layout
--------------------------- */
+/* ======================================================================
+   MAIN LAYOUT — Dashboard Grid
+====================================================================== */
 main {
-    padding: 30px;
+    padding: 35px;
     display: grid;
     grid-template-columns: 1fr 350px;
-    gap: 28px;
+    gap: 32px;
     max-width: 1500px;
     margin: auto;
 }
 
-/* -------------------------
-   Card Style (Reusable)
--------------------------- */
+/* ======================================================================
+   CARD (for both Assigned Events & Messaging)
+====================================================================== */
 .assignedEvents,
 .messaging {
-    background: white;
-    padding: 25px;
-    border-radius: 14px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+    background: rgba(255, 255, 255, 0.75);
+    padding: 28px;
+    border-radius: 18px;
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+    transition: 0.3s ease;
 }
 
+    /* hover lift */
+    .assignedEvents:hover,
+    .messaging:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 32px rgba(0,0,0,0.18);
+    }
+
+    /* Titles */
     .assignedEvents h2,
     .messaging h2 {
-        font-size: 22px;
-        color: #333;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #222;
         margin-bottom: 20px;
-        font-weight: 600;
-        border-bottom: 2px solid #e3e7ee;
+        letter-spacing: 1px;
+        border-bottom: 2px solid #00adb5;
         padding-bottom: 8px;
     }
 
-    /* -------------------------
+    /* ======================================================================
    Assigned Events List
--------------------------- */
+====================================================================== */
     .assignedEvents ul {
         list-style: none;
         margin-top: 12px;
     }
 
     .assignedEvents li {
-        background: #f7f9fc;
+        background: linear-gradient(135deg, #ffffff, #f4f7fb);
         padding: 14px 16px;
-        margin-bottom: 12px;
-        border-radius: 10px;
+        margin-bottom: 14px;
+        border-radius: 14px;
         display: flex;
         flex-direction: column;
         gap: 6px;
-        font-size: 14px;
+        font-size: 15px;
         border: 1px solid #dfe4ec;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+        transition: 0.2s ease;
     }
 
+        /* List hover animation */
+        .assignedEvents li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+    /* Edit button inside list */
     .assignedEvents a.edit-btn {
         margin-top: 6px;
         width: max-content;
-        padding: 6px 12px;
-        background: #00b3b3;
+        padding: 6px 14px;
+        background: linear-gradient(135deg, #00b3b3, #008d8d);
         color: white;
         font-size: 13px;
-        border-radius: 6px;
+        border-radius: 7px;
         text-decoration: none;
-        transition: 0.2s;
+        transition: 0.25s;
+        box-shadow: 0 3px 8px rgba(0,153,153,0.25);
     }
 
         .assignedEvents a.edit-btn:hover {
-            background: #009a9a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(0,153,153,0.35);
         }
 
-    /* -------------------------
+    /* ======================================================================
    Messaging Panel
--------------------------- */
+====================================================================== */
     .messaging textarea {
         width: 100%;
         height: 260px;
         padding: 15px;
         border: 1px solid #dcdfe6;
-        border-radius: 10px;
+        border-radius: 14px;
         resize: none;
         font-size: 14px;
-        background: #fafbff;
+        background: #fbfcff;
+        transition: 0.2s ease;
     }
 
+        /* Focus glow */
+        .messaging textarea:focus {
+            border-color: #00adb5;
+            box-shadow: 0 0 8px rgba(0,173,181,0.35);
+            outline: none;
+        }
+
+/* Send Button */
 .sendMsgBtn {
     width: 100%;
-    margin-top: 14px;
-    padding: 12px;
-    background: #1a1f36;
+    margin-top: 16px;
+    padding: 13px;
+    background: linear-gradient(135deg, #414650, #2f333b);
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: 0.2s;
     font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(57,62,70,0.25);
 }
 
     .sendMsgBtn:hover {
-        background: #14182b;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 24px rgba(57,62,70,0.35);
     }

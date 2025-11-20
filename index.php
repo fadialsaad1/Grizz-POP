@@ -80,8 +80,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["feedbackText"])) {
   </head>
   <body>
     <header>
-        <div>Grizz POP!</div>
-        <div class="user-menu">
+            <div class="logo-container">
+        <img src="images/Grizz POP.png" alt="Grizz POP Logo" class="logo">
+        <span class="logo-text">Grizz POP!</span>
+            </div>
+        <div class="user-menu"></div>
         <button onclick="changeUser()">Change User</button>
     </header>
 
@@ -95,15 +98,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["feedbackText"])) {
       <!-- CENTER COLUMN: UPCOMING -->
       <section class="upcoming">
         <h2>Upcoming Events</h2>
-        <ul id="upcomingList">
-          <?php foreach ($upcomingEvents as $event): ?>
-            <li>
-              <?= date("m-d-Y", strtotime($event["date"])) ?> - <?= htmlspecialchars($event["title"]) ?>
-              (<?= htmlspecialchars($event["status"]) ?>)
-              <button class="pinButton" onclick="pinEvent('<?= addslashes($event["title"]) ?>')">📌</button>
-            </li>
-          <?php endforeach; ?>
-        </ul>
+        <div id="upcomingList">
+            <?php foreach ($upcomingEvents as $event): ?>
+            <div class="event-card">
+                <div>
+                    <strong><?= date("m-d-Y", strtotime($event["date"])) ?></strong><br>
+                            <?= htmlspecialchars($event["title"]) ?><br>
+                       <small style="opacity:0.7;"><?= htmlspecialchars($event["status"]) ?></small>
+                </div>
+                <button class="pinButton" onclick="pinEvent('<?= addslashes($event["title"]) ?>')">📌</button>
+        </div>
+         <?php endforeach; ?>
+        </div>
+
       </section>
 
       <!-- RIGHT COMLUMN: FEEDBACK -->
@@ -118,8 +125,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["feedbackText"])) {
           </select>
           <br><br>
 
-          <label>Rating (1-5):</label><br>
-          <input type="number" name="rating" min="1" max="5" required><br><br>
+          <label>Rating:</label>
+
+<div class="star-rating">
+  <span data-value="1">★</span>
+  <span data-value="2">★</span>
+  <span data-value="3">★</span>
+  <span data-value="4">★</span>
+  <span data-value="5">★</span>
+</div>
+
+<input type="hidden" name="rating" id="ratingValue" required>
 
           <textarea name="feedbackText" placeholder="Write your feedback here..." required></textarea><br>
           <button type="submit">Submit Feedback</button>
@@ -155,5 +171,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["feedbackText"])) {
         if (username) alert(`User changed to ${username}`);
       });
     </script>
+
+      <script>
+  const stars = document.querySelectorAll(".star-rating span");
+  const ratingInput = document.getElementById("ratingValue");
+
+  stars.forEach((star, index) => {
+    star.addEventListener("click", () => {
+      const value = Number(star.getAttribute("data-value"));
+      ratingInput.value = value;
+
+      // Remove all selections
+      stars.forEach(s => s.classList.remove("selected"));
+
+      // Fill stars from LEFT to RIGHT up to selected value
+      for (let i = 0; i < value; i++) {
+        stars[i].classList.add("selected");
+      }
+    });
+  });
+</script>
   </body>
 </html>
