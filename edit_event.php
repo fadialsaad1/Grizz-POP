@@ -10,14 +10,12 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Make sure an ID was passed
 if (!isset($_GET['id'])) {
     die("No event ID provided.");
 }
 
 $eventID = intval($_GET['id']);
 
-// Fetch the event
 $sql = "SELECT * FROM events WHERE eventID = $eventID";
 $result = $conn->query($sql);
 
@@ -27,7 +25,6 @@ if ($result->num_rows !== 1) {
 
 $event = $result->fetch_assoc();
 
-// Update event on submit
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $title = $conn->real_escape_string($_POST["title"]);
@@ -57,140 +54,180 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Edit Event</title>
-</head>
-<body>
-
-<h2>Edit Event</h2>
-
-<form method="POST">
-
-    <label>Title:</label>
-    <input type="text" name="title" value="<?= htmlspecialchars($event['title']) ?>" required>
-
-    <label>Date:</label>
-    <input type="date" name="date" value="<?= $event['date'] ?>" required>
-
-    <label>Time:</label>
-    <input type="time" name="time" value="<?= $event['time'] ?>">
-
-    <label>Location:</label>
-    <input type="text" name="location" value="<?= htmlspecialchars($event['location']) ?>" required>
-
-
-    <label>Comments:</label>
-    <textarea name="comments"><?= htmlspecialchars($event['customComments'] ?? "") ?></textarea>
-
-    <button type="submit">Save Changes</button>
-</form>
-
-</body>
-</html>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Edit Event - Grizz POP!</title>
-    <link rel="stylesheet" href="style.css">
 
     <style>
+        /* GLOBAL */
         body {
-            font-family: Arial, sans-serif;
-            background: #f7f7f7;
             margin: 0;
-            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f1f1;
+            color: #222;
         }
 
+        /* HEADER */
         header {
-            background: #333;
-            padding: 15px;
+            background: #111;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             color: white;
-            font-size: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.25);
         }
 
-        .edit-container {
-            margin: 40px auto;
-            width: 60%;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo {
+            width: 45px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* MAIN WRAPPER */
+        .edit-card {
+            max-width: 900px;
+            margin: 45px auto;
             background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+            border-radius: 14px;
+            padding: 40px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.18);
         }
 
-        h2 {
+        .edit-title {
+            font-size: 32px;
+            font-weight: bold;
             text-align: center;
+            color: #111;
             margin-bottom: 25px;
-            font-size: 28px;
         }
 
-        form label {
+        /* FORM */
+        label {
             display: block;
-            margin-top: 15px;
+            margin-top: 22px;
+            font-size: 16px;
             font-weight: bold;
         }
 
-        input, select, textarea {
+        input, textarea, select {
             width: 100%;
-            padding: 12px;
+            margin-top: 6px;
+            padding: 14px;
             font-size: 16px;
-            border: 1px solid #999;
-            border-radius: 6px;
-            margin-top: 5px;
+            background: #fafafa;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            transition: 0.25s;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: #111;
+            outline: none;
+            background: #fff;
         }
 
         textarea {
-            height: 120px;
+            min-height: 140px;
             resize: vertical;
         }
 
-        .sectionHeader {
-            margin-top: 35px;
-            text-align: center;
-            font-weight: bold;
-            padding-bottom: 5px;
-            border-bottom: 2px solid #111;
-            margin-bottom: 15px;
-            font-size: 18px;
-        }
-
+        /* BUTTONS */
         .button-row {
+            margin-top: 35px;
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
+            gap: 20px;
         }
 
         .saveBtn {
-            padding: 12px 25px;
-            background: #222;
-            border: none;
+            background: #111;
             color: white;
-            border-radius: 8px;
-            font-size: 16px;
+            padding: 14px 32px;
+            font-size: 17px;
+            border-radius: 10px;
+            border: none;
             cursor: pointer;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            transition: 0.25s;
         }
 
         .saveBtn:hover {
-            background: #444;
+            background: #333;
         }
 
         .cancelBtn {
-            padding: 12px 25px;
-            background: #aaa;
-            border: none;
+            background: #777;
             color: white;
-            border-radius: 8px;
-            font-size: 16px;
+            padding: 14px 32px;
+            font-size: 17px;
+            border-radius: 10px;
+            border: none;
             cursor: pointer;
+            letter-spacing: 0.5px;
+            transition: 0.25s;
         }
 
         .cancelBtn:hover {
-            background: #888;
+            background: #555;
         }
+
     </style>
 </head>
+
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="images/Grizz POP.png" class="logo" alt="Grizz POP Logo">
+        <span class="logo-text">Grizz POP!</span>
+    </div>
+</header>
+
+<div class="edit-card">
+    <div class="edit-title">Edit Event</div>
+
+    <form method="POST">
+
+        <label>Title:</label>
+        <input type="text" name="title" 
+               value="<?= htmlspecialchars($event['title']) ?>" required>
+
+        <label>Date:</label>
+        <input type="date" name="date" value="<?= $event['date'] ?>" required>
+
+        <label>Time:</label>
+        <input type="time" name="time" value="<?= $event['time'] ?>">
+
+        <label>Location:</label>
+        <input type="text" name="location" 
+               value="<?= htmlspecialchars($event['location']) ?>" required>
+
+        <label>Comments:</label>
+        <textarea name="comments"><?= htmlspecialchars($event['customComments'] ?? "") ?></textarea>
+
+        <div class="button-row">
+            <button type="submit" class="saveBtn">Save Changes</button>
+            <a href="creation_user.php">
+                <button type="button" class="cancelBtn">Cancel</button>
+            </a>
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>

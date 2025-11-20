@@ -40,7 +40,7 @@ if ($resultAssigned && $resultAssigned->num_rows > 0) {
 <html lang="en">
   <head>
       <title>Crew User - Grizz POP!</title>
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="SetupCrew.css">
   </head>
 
   <body>

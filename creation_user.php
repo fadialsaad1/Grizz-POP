@@ -65,7 +65,7 @@ if ($resultCreated && $resultCreated->num_rows > 0) {
 <html lang="en">
   <head>
       <title>Creation User - Grizz POP!</title>
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="creationUser.css">
   </head>
 
   <body>

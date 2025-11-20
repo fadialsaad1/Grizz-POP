@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["feedbackText"])) {
   <head>
     <meta charset="UTF-8">
     <title>Grizz POP!</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
   </head>
   <body>
     <header>
