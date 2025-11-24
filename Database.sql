@@ -50,7 +50,13 @@ CREATE TABLE crewAssignment (
     FOREIGN KEY (crewID) REFERENCES users(userID)
 );
 
-
+CREATE TABLE messages (
+    messageID INT AUTO_INCREMENT PRIMARY KEY,
+    senderID INT NOT NULL,
+    senderType ENUM('organizer','attendee','crew') NOT NULL,
+    message TEXT NOT NULL,
+    timestamp DATETIME NOT NULL
+);
 
 INSERT INTO users (firstname, lastname, email, phone, role) VALUES
 ('Alice', 'Johnson', 'alice.johnson@gmail.com', '312-485-9271', 'Organizer'),
