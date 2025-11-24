@@ -18,7 +18,7 @@ if ($conn->connect_error) {
 // ---------------------------
 $assignedEvents = [];
 $sqlAssigned = "
-  SELECT e.eventID, e.title, e.date, e.status, e.location, e.setupList
+  SELECT e.eventID, e.title, e.date, e.status, e.location, e.setupList, ca.issueReport
   FROM events e
   JOIN crewAssignment ca ON e.eventID = ca.eventID
   WHERE ca.crewID = 3 AND (e.status != 'Completed' AND ca.setupStatus != 'Completed')
@@ -33,6 +33,67 @@ if ($resultAssigned && $resultAssigned->num_rows > 0) {
   }
 }
 
+// ---------------------------
+// MESSAGING SYSTEM
+// ---------------------------
+$messages = [];
+$currentUserID = 3; // Current user ID - adjust as needed
+$currentUserName = "You"; // Default
+$currentUserRole = "Crew"; // Default
+
+// Get current user's name from users table
+$userQuery = $conn->query("SELECT firstname, lastname, role FROM users WHERE userID = $currentUserID");
+if ($userQuery && $userQuery->num_rows > 0) {
+    $userData = $userQuery->fetch_assoc();
+    $currentUserName = $userData['firstname'] . " " . $userData['lastname'];
+    $currentUserRole = $userData['role'];
+}
+
+// Handle sending new messages
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['message'])) {
+    $message = $conn->real_escape_string($_POST['message']);
+    $senderID = $currentUserID;
+    $senderType = strtolower($currentUserRole); // Convert role to senderType
+    
+    if (!empty(trim($message))) {
+        $insertMessage = "INSERT INTO messages (senderID, senderType, message, timestamp) 
+                         VALUES ('$senderID', '$senderType', '$message', NOW())";
+        
+        if ($conn->query($insertMessage)) {
+            // Message sent successfully - redirect to same page to avoid form resubmission
+            header("Location: " . $_SERVER['PHP_SELF']);
+            exit;
+        } else {
+            echo "<script>alert('Error sending message: " . $conn->error . "');</script>";
+        }
+    } else {
+        echo "<script>alert('Please enter a message');</script>";
+    }
+}
+
+// Fetch recent messages with actual user names and roles
+$sqlMessages = "
+    SELECT m.*, 
+           u.firstname, 
+           u.lastname, 
+           u.role as userRole,
+           CASE 
+               WHEN m.senderID = $currentUserID THEN 'You'
+               ELSE CONCAT(u.firstname, ' ', u.lastname)
+           END as displayName
+    FROM messages m
+    JOIN users u ON m.senderID = u.userID
+    ORDER BY m.timestamp DESC 
+    LIMIT 50
+";
+
+$resultMessages = $conn->query($sqlMessages);
+if ($resultMessages && $resultMessages->num_rows > 0) {
+    while ($row = $resultMessages->fetch_assoc()) {
+        $messages[] = $row;
+    }
+    $messages = array_reverse($messages); // Show oldest first
+}
 ?>
 
 
@@ -106,6 +167,7 @@ if ($resultAssigned && $resultAssigned->num_rows > 0) {
               <li>
                 
                 <?= htmlspecialchars($ev["status"]) ?>
+                <div class="field"><label>Issue Report:</label><span> <?= htmlspecialchars($ev["issueReport"]) ?></span></div>
                 <a class="edit-btn" href="edit_event_status.php?id=<?= $ev['eventID'] ?>">Edit Setup Status</a>
 
               </li>
@@ -120,10 +182,37 @@ if ($resultAssigned && $resultAssigned->num_rows > 0) {
       <!-- RIGHT COLUMN: MESSAGING -->
       <section class="messaging">
           <h2>Messaging</h2>
-          <textarea placeholder="Send a message..."></textarea>
-          <button class="sendMsgBtn">Send</button>
+          
+          <!-- Messages Display Area -->
+          <div class="messages-container">
+              <?php if (count($messages) > 0): ?>
+                  <?php foreach ($messages as $msg): ?>
+                      <div class="message <?= $msg['senderID'] == $currentUserID ? 'message-sent' : 'message-received' ?>">
+                          <div class="message-bubble">
+                              <div class="message-content">
+                                  <?= htmlspecialchars($msg['message'] ?? '') ?>
+                              </div>
+                              <div class="message-info">
+                                  <div class="message-user">
+                                      <span class="sender-name"><?= htmlspecialchars($msg['displayName'] ?? 'Unknown User') ?></span>
+                                      <span class="user-badge"><?= ucfirst($msg['userRole'] ?? 'Unknown') ?></span>
+                                  </div>
+                                  <span class="message-time"><?= date("g:i A", strtotime($msg['timestamp'])) ?></span>
+                              </div>
+                          </div>
+                      </div>
+                  <?php endforeach; ?>
+              <?php else: ?>
+                  <div class="no-messages">No messages yet. Start the conversation!</div>
+              <?php endif; ?>
+          </div>
+          
+          <!-- Message Input Form -->
+          <form method="POST" class="message-form">
+              <textarea name="message" placeholder="Type your message here..." required></textarea>
+              <button type="submit" class="sendMsgBtn">Send Message</button>
+          </form>
       </section>
-
     </main>
 
     <script>
