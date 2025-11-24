@@ -58,6 +58,15 @@ CREATE TABLE messages (
     timestamp DATETIME NOT NULL
 );
 
+CREATE TABLE pinned_events (
+  pinID INT AUTO_INCREMENT PRIMARY KEY,
+  userID INT NOT NULL,
+  eventID INT NOT NULL,
+  UNIQUE KEY uq_user_event (userID, eventID),
+  FOREIGN KEY (userID) REFERENCES users(userID) ON DELETE CASCADE,
+  FOREIGN KEY (eventID) REFERENCES events(eventID) ON DELETE CASCADE
+);
+
 INSERT INTO users (firstname, lastname, email, phone, role) VALUES
 ('Alice', 'Johnson', 'alice.johnson@gmail.com', '312-485-9271', 'Organizer'),
 ('Bob', 'Smith', 'bob.smith@gmail.com', '714-203-6598', 'Attendee'),
