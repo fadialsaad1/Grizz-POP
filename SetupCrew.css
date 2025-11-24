@@ -1,5 +1,5 @@
 /* ======================================================================
-   GLOBAL — Modern Premium Style
+   GLOBAL ï¿½ Modern Premium Style
 ====================================================================== */
 * {
     margin: 0;
@@ -33,7 +33,7 @@ body, section {
 }
 
 /* ======================================================================
-   HEADER — Glass + Glow
+   HEADER ï¿½ Glass + Glow
 ====================================================================== */
 header {
     display: flex;
@@ -104,7 +104,7 @@ header button {
     }
 
 /* ======================================================================
-   MAIN LAYOUT — Dashboard Grid
+   MAIN LAYOUT ï¿½ Dashboard Grid
 ====================================================================== */
 main {
     padding: 35px;
@@ -195,6 +195,27 @@ main {
             box-shadow: 0 8px 18px rgba(0,153,153,0.35);
         }
 
+            /* Complete button inside list */
+    .assignedEvents .complete-btn {
+        margin-top: 6px;
+        width: max-content;
+       padding: 6px 14px;
+        background: linear-gradient(135deg, #00b3b3, #008d8d);
+        color: white;
+        font-size: 13px;
+        border-radius: 7px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.25s;
+        box-shadow: 0 3px 8px rgba(0,153,153,0.25);
+        border: none;
+        cursor: pointer;
+    }
+
+        .assignedEvents .complete-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(0,153,153,0.35);
+        }
     /* ======================================================================
    Messaging Panel
 ====================================================================== */
