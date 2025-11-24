@@ -18,7 +18,7 @@ if ($conn->connect_error) {
 // ---------------------------
 $assignedEvents = [];
 $sqlAssigned = "
-  SELECT e.eventID, e.title, e.date, e.status, e.location, e.setupList
+  SELECT e.eventID, e.title, e.date, e.status, e.location, e.setupList, ca.issueReport
   FROM events e
   JOIN crewAssignment ca ON e.eventID = ca.eventID
   WHERE ca.crewID = 3 AND (e.status != 'Completed' AND ca.setupStatus != 'Completed')
@@ -106,6 +106,7 @@ if ($resultAssigned && $resultAssigned->num_rows > 0) {
               <li>
                 
                 <?= htmlspecialchars($ev["status"]) ?>
+                <div class="field"><label>Issue Report:</label><span> <?= htmlspecialchars($ev["issueReport"]) ?></span></div>
                 <a class="edit-btn" href="edit_event_status.php?id=<?= $ev['eventID'] ?>">Edit Setup Status</a>
 
               </li>
