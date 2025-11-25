@@ -139,7 +139,7 @@ if ($resultMessages && $resultMessages->num_rows > 0) {
                       <div class="field"><label>Date:</label><span>(<?= date("m-d-Y", strtotime($ev["date"])) ?>)</span></div>
                       <div class="field"><label>Location:</label><span><?= htmlspecialchars($ev["location"]) ?></span></div>
                       <div class="field"><label>Status:</label><span><?= htmlspecialchars($ev["status"]) ?></span></div>
-                      <div class="field"><label>Setup List:</label><span><?= htmlspecialchars($ev["setupList"]) ?></span></div>
+                      <div class="field"><label>Setup List:</label><span><?= htmlspecialchars($ev["setupList"] ?? '') ?></span></div>
                     </div>
                      <!-- Complete Button -->
                     <?php if ($ev["status"] != 'Completed'): ?>

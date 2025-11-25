@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $location = $conn->real_escape_string($_POST["location"]);
     $date = $_POST["date"];
     $time = $_POST["time"];
-    $status = $conn->real_escape_string($_POST["status"]);
+    $status = "Waiting for setup crew";
     $comments = $conn->real_escape_string($_POST["comments"]);
 
     $update = "
@@ -267,8 +267,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="text" name="location" 
                value="<?= htmlspecialchars($event['location']) ?>" required>
 
+               <label>Status:</label>
+                  <select name="status" disabled>
+                      <option value="Waiting For Setup Crew">Waiting For Setup Crew</option>
+                  </select>
+         
+
+        <label>Setup List:</label>
+        <input type="text" name="setup_list" required>
+
         <label>Comments:</label>
         <textarea name="comments"><?= htmlspecialchars($event['customComments'] ?? "") ?></textarea>
+
 
         <div class="button-row">
             <button type="submit" class="saveBtn">Save Changes</button>

@@ -3,40 +3,56 @@
   "WorkspaceRootPath": "C:\\wamp64\\www\\Grizz-POP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\Grizz-POP\\SetupCrew.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SetupCrew.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\Grizz-POP\\setup_crew.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:setup_crew.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\Grizz-POP\\creation_user.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:creation_user.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\Grizz-POP\\index.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\Grizz-POP\\index.css||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.css||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\Grizz-POP\\creationUser.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:creationUser.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\Grizz-POP\\switch_user.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:switch_user.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\Grizz-POP\\edit_event.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:edit_event.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\Grizz-POP\\edit_event_status.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:edit_event_status.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\Grizz-POP\\edit_event.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:edit_event.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\Grizz-POP\\setup_crew.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:setup_crew.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\Grizz-POP\\index.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\Grizz-POP\\event_reservations.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:event_reservations.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\Grizz-POP\\creationUser.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:creationUser.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\Grizz-POP\\index.css||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.css||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\Grizz-POP\\switch_user.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:switch_user.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\Grizz-POP\\Database.sql||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Database.sql||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\Grizz-POP\\complete_event_setup.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:complete_event_setup.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\Grizz-POP\\event_pin_action.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:event_pin_action.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\Grizz-POP\\SetupCrew.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SetupCrew.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\Grizz-POP\\cancel_event.php||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -50,106 +66,97 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 10,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SetupCrew.css",
-              "DocumentMoniker": "C:\\wamp64\\www\\Grizz-POP\\SetupCrew.css",
-              "RelativeDocumentMoniker": "SetupCrew.css",
-              "ToolTip": "C:\\wamp64\\www\\Grizz-POP\\SetupCrew.css",
-              "RelativeToolTip": "SetupCrew.css",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAQwJwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-20T04:04:57.54Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "index.css",
-              "DocumentMoniker": "C:\\wamp64\\www\\Grizz-POP\\index.css",
-              "RelativeDocumentMoniker": "index.css",
-              "ToolTip": "C:\\wamp64\\www\\Grizz-POP\\index.css",
-              "RelativeToolTip": "index.css",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAQwJcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-20T03:58:34.611Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "edit_event_status.php",
-              "DocumentMoniker": "C:\\wamp64\\www\\Grizz-POP\\edit_event_status.php",
-              "RelativeDocumentMoniker": "edit_event_status.php",
-              "ToolTip": "C:\\wamp64\\www\\Grizz-POP\\edit_event_status.php",
-              "RelativeToolTip": "edit_event_status.php",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "event_reservations.php",
+              "DocumentMoniker": "C:\\wamp64\\www\\Grizz-POP\\event_reservations.php",
+              "RelativeDocumentMoniker": "event_reservations.php",
+              "ToolTip": "C:\\wamp64\\www\\Grizz-POP\\event_reservations.php",
+              "RelativeToolTip": "event_reservations.php",
+              "ViewState": "AgIAAI8AAAAAAAAAAAAlwCABAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-17T01:31:07.913Z",
+              "WhenOpened": "2025-11-25T00:17:29.639Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "cancel_event.php",
-              "DocumentMoniker": "C:\\wamp64\\www\\Grizz-POP\\cancel_event.php",
-              "RelativeDocumentMoniker": "cancel_event.php",
-              "ToolTip": "C:\\wamp64\\www\\Grizz-POP\\cancel_event.php",
-              "RelativeToolTip": "cancel_event.php",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-15T02:27:39.528Z",
+              "Title": "Database.sql",
+              "DocumentMoniker": "C:\\wamp64\\www\\Grizz-POP\\Database.sql",
+              "RelativeDocumentMoniker": "Database.sql",
+              "ToolTip": "C:\\wamp64\\www\\Grizz-POP\\Database.sql",
+              "RelativeToolTip": "Database.sql",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-11-24T21:47:04.559Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
+              "Title": "complete_event_setup.php",
+              "DocumentMoniker": "C:\\wamp64\\www\\Grizz-POP\\complete_event_setup.php",
+              "RelativeDocumentMoniker": "complete_event_setup.php",
+              "ToolTip": "C:\\wamp64\\www\\Grizz-POP\\complete_event_setup.php",
+              "RelativeToolTip": "complete_event_setup.php",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-24T21:43:00.878Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "event_pin_action.php",
+              "DocumentMoniker": "C:\\wamp64\\www\\Grizz-POP\\event_pin_action.php",
+              "RelativeDocumentMoniker": "event_pin_action.php",
+              "ToolTip": "C:\\wamp64\\www\\Grizz-POP\\event_pin_action.php",
+              "RelativeToolTip": "event_pin_action.php",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-24T21:42:46.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "creationUser.css",
               "DocumentMoniker": "C:\\wamp64\\www\\Grizz-POP\\creationUser.css",
               "RelativeDocumentMoniker": "creationUser.css",
               "ToolTip": "C:\\wamp64\\www\\Grizz-POP\\creationUser.css",
               "RelativeToolTip": "creationUser.css",
-              "ViewState": "AgIAAJwAAAAAAAAAAAAQwPEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAAAMQBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-11-15T02:19:29.715Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "edit_event.php",
-              "DocumentMoniker": "C:\\wamp64\\www\\Grizz-POP\\edit_event.php",
-              "RelativeDocumentMoniker": "edit_event.php",
-              "ToolTip": "C:\\wamp64\\www\\Grizz-POP\\edit_event.php",
-              "RelativeToolTip": "edit_event.php",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAACEAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-15T02:11:16.112Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "index.php",
               "DocumentMoniker": "C:\\wamp64\\www\\Grizz-POP\\index.php",
               "RelativeDocumentMoniker": "index.php",
               "ToolTip": "C:\\wamp64\\www\\Grizz-POP\\index.php",
               "RelativeToolTip": "index.php",
-              "ViewState": "AgIAADsAAAAAAAAAAAAlwE4AAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAGsBAAAAAAAAAAAQwLEBAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-11-15T01:53:48.694Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "switch_user.php",
               "DocumentMoniker": "C:\\wamp64\\www\\Grizz-POP\\switch_user.php",
               "RelativeDocumentMoniker": "switch_user.php",
@@ -162,29 +169,93 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "setup_crew.php",
               "DocumentMoniker": "C:\\wamp64\\www\\Grizz-POP\\setup_crew.php",
               "RelativeDocumentMoniker": "setup_crew.php",
               "ToolTip": "C:\\wamp64\\www\\Grizz-POP\\setup_crew.php",
               "RelativeToolTip": "setup_crew.php",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAUwG0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAAAIwAAAB4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-11-15T01:33:46.94Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "creation_user.php",
               "DocumentMoniker": "C:\\wamp64\\www\\Grizz-POP\\creation_user.php",
               "RelativeDocumentMoniker": "creation_user.php",
               "ToolTip": "C:\\wamp64\\www\\Grizz-POP\\creation_user.php",
               "RelativeToolTip": "creation_user.php",
-              "ViewState": "AgIAADAAAAAAAAAAAAAlwEMAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-11-15T01:33:20.64Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "edit_event.php",
+              "DocumentMoniker": "C:\\wamp64\\www\\Grizz-POP\\edit_event.php",
+              "RelativeDocumentMoniker": "edit_event.php",
+              "ToolTip": "C:\\wamp64\\www\\Grizz-POP\\edit_event.php",
+              "RelativeToolTip": "edit_event.php",
+              "ViewState": "AgIAAAEBAAAAAAAAAAAQwAwBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-15T02:11:16.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "edit_event_status.php",
+              "DocumentMoniker": "C:\\wamp64\\www\\Grizz-POP\\edit_event_status.php",
+              "RelativeDocumentMoniker": "edit_event_status.php",
+              "ToolTip": "C:\\wamp64\\www\\Grizz-POP\\edit_event_status.php",
+              "RelativeToolTip": "edit_event_status.php",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-17T01:31:07.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "index.css",
+              "DocumentMoniker": "C:\\wamp64\\www\\Grizz-POP\\index.css",
+              "RelativeDocumentMoniker": "index.css",
+              "ToolTip": "C:\\wamp64\\www\\Grizz-POP\\index.css",
+              "RelativeToolTip": "index.css",
+              "ViewState": "AgIAAHEBAAAAAAAAAAAQwIgBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-20T03:58:34.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SetupCrew.css",
+              "DocumentMoniker": "C:\\wamp64\\www\\Grizz-POP\\SetupCrew.css",
+              "RelativeDocumentMoniker": "SetupCrew.css",
+              "ToolTip": "C:\\wamp64\\www\\Grizz-POP\\SetupCrew.css",
+              "RelativeToolTip": "SetupCrew.css",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAJwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-20T04:04:57.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "cancel_event.php",
+              "DocumentMoniker": "C:\\wamp64\\www\\Grizz-POP\\cancel_event.php",
+              "RelativeDocumentMoniker": "cancel_event.php",
+              "ToolTip": "C:\\wamp64\\www\\Grizz-POP\\cancel_event.php",
+              "RelativeToolTip": "cancel_event.php",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-15T02:27:39.528Z"
             }
           ]
         }

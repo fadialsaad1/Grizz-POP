@@ -263,3 +263,135 @@ button[type="submit"] {
        color: gold;
        text-shadow: 0 0 10px gold;
  }
+
+
+.rsvpBtn {
+    background: linear-gradient(135deg, #0abac8, #089ea9); /* same style as Edit */
+    border: none;
+    padding: 10px 22px;
+    border-radius: 20px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.rsvpBtn:hover {
+    opacity: 0.85;
+    transform: scale(1.03);
+}
+
+.rsvpBtn:active {
+    transform: scale(0.97);
+}
+
+.rsvp-options {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.rsvpChoice {
+    background: linear-gradient(135deg, #0abac8, #089ea9);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Modal layout */
+#rsvpModal .modal-content {
+    background: white;
+    padding: 25px 30px;
+    border-radius: 14px;
+    width: 420px;
+    margin: auto;
+}
+
+/* Title */
+#rsvpModal h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+#rsvpModal .event-title {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Inputs */
+#rsvpModal input[type="text"],
+#rsvpModal input[type="email"],
+#rsvpModal select {
+    width: 100%;
+    padding: 9px 12px;
+    margin-top: 4px;
+    margin-bottom: 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* Toggle Yes/No buttons */
+.rsvp-toggle {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0 20px;
+}
+
+    .rsvp-toggle input[type="radio"] {
+        display: none;
+    }
+
+.toggleOption {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #f0f0f0;
+    transition: 0.25s;
+    border: 1px solid #e0e0e0;
+}
+
+/* When selected */
+.rsvp-toggle input[type="radio"]:checked + .toggleOption {
+    background: linear-gradient(135deg, #0abac8, #089ea9);
+    color: white;
+    border-color: transparent;
+    transform: scale(1.03);
+}
+
+/* Submit button */
+.submitBtn {
+    width: 100%;
+    padding: 11px 0;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #0abac8, #089ea9);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+    .submitBtn:hover {
+        opacity: 0.85;
+        transform: scale(1.02);
+    }
+
+    .submitBtn:active {
+        transform: scale(0.97);
+    }
+
