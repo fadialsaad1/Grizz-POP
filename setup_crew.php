@@ -73,14 +73,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['message'])) {
 
 // Fetch recent messages with actual user names and roles
 $sqlMessages = "
-    SELECT m.*, 
-           u.firstname, 
-           u.lastname, 
-           u.role as userRole,
-           CASE 
-               WHEN m.senderID = $currentUserID THEN 'You'
-               ELSE CONCAT(u.firstname, ' ', u.lastname)
-           END as displayName
+    SELECT 
+        m.*,
+        u.firstname,
+        u.lastname,
+        u.role AS userRole,
+        CONCAT(u.firstname, ' ', u.lastname) AS displayName
     FROM messages m
     JOIN users u ON m.senderID = u.userID
     ORDER BY m.timestamp DESC 

@@ -69,9 +69,9 @@ if ($resultCreated && $resultCreated->num_rows > 0) {
 // MESSAGING SYSTEM
 // ---------------------------
 $messages        = [];
-$currentUserID   = 3;       // Current user ID - adjust as needed
+$currentUserID   = 1;       // Current user ID - adjust as needed
 $currentUserName = "You";   // Default
-$currentUserRole = "Crew";  // Default
+$currentUserRole = "Organizer";  // Default
 
 // Get current user's name from users table
 $userQuery = $conn->query("SELECT firstname, lastname, role FROM users WHERE userID = $currentUserID");
@@ -112,10 +112,7 @@ $sqlMessages = "
         u.firstname,
         u.lastname,
         u.role AS userRole,
-        CASE 
-            WHEN m.senderID = {$currentUserID} THEN 'You'
-            ELSE CONCAT(u.firstname, ' ', u.lastname)
-        END AS displayName
+        CONCAT(u.firstname, ' ', u.lastname) AS displayName
     FROM messages m
     JOIN users u ON m.senderID = u.userID
     ORDER BY m.timestamp DESC 
