@@ -10,14 +10,12 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Make sure an ID was passed
 if (!isset($_GET['id'])) {
     die("No event ID provided.");
 }
 
 $eventID = intval($_GET['id']);
 
-// Fetch the event data from both events and crewAssignment tables
 $sql = "SELECT e.*, ca.setupStatus, ca.issueReport 
         FROM events e 
         LEFT JOIN crewAssignment ca ON e.eventID = ca.eventID 
@@ -30,7 +28,6 @@ if ($result->num_rows !== 1) {
 
 $event = $result->fetch_assoc();
 
-// Update event on submit
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
      if (isset($_POST['complete'])) {
         $status = 'Completed';
@@ -39,17 +36,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $status = $conn->real_escape_string($_POST["status"]);
         $issueReport = $conn->real_escape_string($_POST["issueReport"] ?? '');
     }
-    // Update events table
     $updateEvents = "UPDATE events SET status = '$status' WHERE eventID = $eventID";
     
-    // Update crewAssignment table - fixed syntax error (removed extra comma)
     $updateCrew = "UPDATE crewAssignment SET setupStatus = '$status', issueReport = '$issueReport' WHERE eventID = $eventID";
 
-       // Start transaction for multiple updates
     $conn->begin_transaction();
     
     try {
-        // Execute both updates
         if ($conn->query($updateEvents) && $conn->query($updateCrew)) {
             $conn->commit();
             echo "<script>alert('Event Status updated successfully!'); window.location='setup_crew.php';</script>";
@@ -114,9 +107,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Edit Event Status - Grizz POP!</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* ======================================================================
-   GLOBAL — Premium Modern UI
-====================================================================== */
         body {
             margin: 0;
             font-family: "Inter", sans-serif;
@@ -125,7 +115,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             animation: fadeIn 0.6s ease-in-out;
         }
 
-        /* Fade In Animation */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -137,9 +126,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
 
-        /* ======================================================================
-   HEADER — Glass + Glow
-====================================================================== */
         header {
             background: rgba(34, 40, 49, 0.85);
             backdrop-filter: blur(14px);
@@ -169,9 +155,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             letter-spacing: 1.3px;
         }
 
-        /* ======================================================================
-   EDIT CARD — Glassmorphism Panel
-====================================================================== */
         .edit-card {
             max-width: 900px;
             margin: 55px auto;
@@ -190,7 +173,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             box-shadow: 0 18px 40px rgba(0,0,0,0.22);
         }
 
-        /* Title */
         .edit-title {
             font-size: 2.2rem;
             font-weight: 800;
@@ -200,9 +182,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             margin-bottom: 30px;
         }
 
-        /* ======================================================================
-   FORM INPUTS
-====================================================================== */
         label {
             display: block;
             margin-top: 20px;
@@ -237,7 +216,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             resize: vertical;
         }
 
-        /* Section Header */
         .sectionHeader {
             margin-top: 35px;
             text-align: center;
@@ -248,9 +226,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             font-size: 18px;
         }
 
-        /* ======================================================================
-   BUTTONS — Gradient + Glow
-====================================================================== */
         .button-row {
             margin-top: 40px;
             display: flex;
@@ -258,7 +233,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             gap: 22px;
         }
 
-        /* Save Button */
         .saveBtn {
             background: linear-gradient(135deg, #00c9d2, #009198);
             color: white;
@@ -278,7 +252,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             box-shadow: 0 10px 26px rgba(0,173,181,0.45);
         }
 
-        /* Cancel Button */
         .cancelBtn {
             background: linear-gradient(135deg, #393e46, #2e3238);
             color: white;
